@@ -1,0 +1,121 @@
+/*Código armado por La Foca Loca S.A. No modificar*/
+body {
+  font-family: Arial, sans-serif;
+  width: 940px;
+  margin: 4em auto;
+  min-height: 100%;
+  box-sizing: border-box;
+  background-image: url(../images/diegote/fondo_maradona.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  padding: 1px 0;
+  animation: fadein 5s;
+}
+
+/* Le puedo agregar un font famili */
+li::before {
+  content: "* ";
+  color: #333;
+}
+#opciones{
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+}
+
+#opciones a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 1.5em;
+    transition: all .5s
+}
+
+#opciones a:hover{
+  transform: scale(1.2);
+}
+
+
+.col-40, .col-60 {
+  display: table-cell;
+  margin: 0;
+  vertical-align: top;
+}
+.col-40 {
+  background: #FFF;
+  padding: 5px 30px;
+  border-top-left-radius: 1px;
+  color: #000;
+  text-align: center;
+}
+
+#lista-instrucciones {
+  text-align: left;
+}
+
+.col-40 h1 {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+}
+
+#objetivo img {
+  width: 200px;
+  margin: 5px 0;
+}
+
+.col-60 {
+  background: grey;
+}
+
+#flecha{
+  font-size: 60px;
+  color: grey;
+}
+
+.texto-centrado {
+  text-align: center;
+}
+
+#mezclar button i{
+    font-size: 2.5em;
+    transition: all .5s;
+}
+
+#mezclar button i:hover{
+    color: red;
+    transform: scale(1.2);
+}
+
+#juego div {
+  text-align: center;
+  animation: fadein 2s;
+  width: 600px;
+}
+
+#juego img {
+  width: 33%;
+	float: left;
+	border-radius: 1px;
+  border: 1px solid #000;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#mezclar button{
+    border: 0;
+    background: none;
+}
+
+
+

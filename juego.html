@@ -3,61 +3,76 @@
   <head>
     <meta charset="utf-8">
     <title>BMO Arcade</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="images/final.png">
     <link rel="stylesheet" href="css/juego.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
   </head>
   <body>
-    <div class="col-40">
+<!-- Menu ---------------------------------------------------->
     
-      <div id="titulo">
-      </div>
-      <div id="instrucciones">
-        <ul id="lista-instrucciones">
-        </ul>
-      </div>
-      <div id="objetivo">
-        <div class="texto-centrado">
-          
-        </div>
-      </div>
-      <div id="ultimo-mov">
-        <div id="flecha" class="texto-centrado">
-          
-        </div>
-      </div>
-      
+    <!-- Seleccion de imagenes ---------------------------------------------------->
+    <div id="opciones">
+        
+        <a href="#" id="diego">Diego Maradona</a>
+        <a href="#" id="toys_story">Toys Story</a>
+        
     </div>
+    
+    <!-- Fin de seleccion de imagenes ---------------------------------------------------->
+
+    <div class="col-40">
+
+        <div id="titulo">
+        </div>
+
+        <div id="instrucciones"> 
+            <ul id="lista-instrucciones">
+                <h1>Instrucciones</h1>
+            </ul>
+        </div>
+        <div id="objetivo"> 
+            <h1>Objetivo:</h1>
+            <div class="texto-centrado">
+            <img class="objetivo" src="images/diegote/maradona.jpg">
+            </div>
+        </div>
+
+        <div id="ultimo-mov">
+            <div id="flecha" class="texto-centrado">
+            </div>
+        </div>
+        <div id="mezclar">
+            <button onclick="location.reload(true)">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </div>
+<!-- Fin de Menu ---------------------------------------------------->
+
+<!-- Juego ---------------------------------------------------->
     <div class="col-60">
-      <div class="piezas" id="juego">
-        <div id="pieza1">
-          <img src="images/10.jpg">
+        <div id="juego">
+            <div id="pieza1"><img id="1" src="images/diegote/10.jpg"></div>
+            <div id="pieza2"><img id="2" src="images/diegote/20.jpg"></div>
+            <div id="pieza3"><img id="3" src="images/diegote/30.jpg"></div>
+            <div id="pieza4"><img id="4" src="images/diegote/40.jpg"></div>
+            <div id="pieza5"><img id="5" src="images/diegote/50.jpg"></div>
+            <div id="pieza6"><img id="6" src="images/diegote/60.jpg"></div>
+            <div id="pieza7"><img id="7" src="images/diegote/70.jpg"></div>
+            <div id="pieza8"><img id="8" src="images/diegote/80.jpg"></div>
+            <div id="pieza9"><img id="9" src="images/diegote/90.jpg"></div>
         </div>
-        <div id="pieza2">
-          <img src="images/20.jpg">
-        </div>
-        <div id="pieza3">
-          <img src="images/30.jpg">
-        </div>
-        <div id="pieza4">
-          <img src="images/40.jpg">
-        </div>
-        <div id="pieza5">
-          <img src="images/50.jpg">
-        </div>
-        <div id="pieza6">
-          <img src="images/60.jpg">
-        </div>
-        <div id="pieza7">
-          <img src="images/70.jpg">
-        </div>
-        <div id="pieza8">
-          <img src="images/80.jpg">
-        </div>
-        <div id="pieza9"></div>
-      </div>
     </div>
+
+<!-- Fin de Juego ---------------------------------------------------->
+
     <div id="footer">
-      
+
     </div>
     <script src="js/juego.js"></script>
+    <script src="js/seleccionDePersonajes.js"></script>
+    <script src="js/sweetalert.min.js"></script>
   </body>
 </html>
