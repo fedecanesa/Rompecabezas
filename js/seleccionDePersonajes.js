@@ -1,8 +1,9 @@
-function toystory(){
+function toystory()
+{
 	instrucciones = [];
 	$("body").css("background", "url(images/toystory/fondo_toystory.jpg)");
 	$('body').css('background-size', 'cover');
-  	$('body').css('background-repeat', 'no-repeat');
+	$('body').css('background-repeat', 'no-repeat');
 	$(".objetivo").attr("src", "images/toystory/toy_story.jpg");
 	$("#1").attr("src", "images/toystory/10.jpg");
 	$("#2").attr("src", "images/toystory/20.jpg");
@@ -16,11 +17,13 @@ function toystory(){
 	$("body").change(iniciar());
 }
 
-$("#toys_story").click(function(){
+$("#toys_story").click(function()
+{
 	toystory();
 });
 
-function maradona(){
+function maradona()
+{
 	instrucciones = [];
 	$("body").css("background", "url(images/diegote/fondo_maradona.jpg)");
 	$('body').css('background-size', 'cover');
@@ -41,3 +44,4 @@ function maradona(){
 $("#diego").click(function(){
 	maradona();
 });
+

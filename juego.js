@@ -1,11 +1,12 @@
 // Arreglo que contiene las intrucciones del juego 
-var instrucciones = [];
+let instrucciones = [];
 // Arreglo para ir guardando los movimientos que se vayan realizando
-var movimientos = [];
+let movimientos = [];
 
 // Representación de la grilla. Cada número representa a una pieza.
 // El 9 es la posición vacía
-var grilla = [
+let grilla = 
+[
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
@@ -13,8 +14,8 @@ var grilla = [
 
 /* Estas dos variables son para guardar la posición de la pieza vacía. 
 Esta posición comienza siendo la [2, 2]*/
-var filaVacia = 2;
-var columnaVacia = 2;
+let filaVacia = 2;
+let columnaVacia = 2;
 
 /* Esta función deberá recorrer el arreglo de instrucciones pasado por parámetro. 
 Cada elemento de este arreglo deberá ser mostrado en la lista con id 'lista-instrucciones'. 
@@ -66,8 +67,8 @@ function posicionValida(fila, columna) {
 /* Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
 Las direcciones están dadas por números que representa: arriba (38), abajo (40), izquierda (37), derecha (39) */
 function moverEnDireccion(direccion) {
-  var nuevaFilaPiezaVacia;
-  var nuevaColumnaPiezaVacia;
+  let nuevaFilaPiezaVacia;
+  let nuevaColumnaPiezaVacia;
 
   // Mueve pieza hacia la abajo, reemplazandola con la blanca
   if (direccion === codigosDireccion.ABAJO) {
@@ -120,7 +121,7 @@ entiendas perfectamente lo que estás haciendo! */
 el uso de números confusos en tu código. Para referirte a la dir
 izquierda, en vez de usar el número 37, ahora podés usar:
 codigosDireccion.IZQUIERDA. Esto facilita mucho la lectura del código. */
-var codigosDireccion = {
+let codigosDireccion = {
     IZQUIERDA: 37,
     ARRIBA: 38,
     DERECHA: 39,
@@ -132,8 +133,8 @@ el intercambio en la pantalla (DOM). Para que funcione debera estar implementada
 la funcion intercambiarPosicionesGrilla() */
 function intercambiarPosiciones(fila1, columna1, fila2, columna2) {
   // Intercambio posiciones en la grilla
-  var pieza1 = grilla[fila1][columna1];
-  var pieza2 = grilla[fila2][columna2];
+  let pieza1 = grilla[fila1][columna1];
+  let pieza2 = grilla[fila2][columna2];
 
   intercambiarPosicionesGrilla(fila1, columna1, fila2, columna2);
   intercambiarPosicionesDOM('pieza' + pieza1, 'pieza' + pieza2);
@@ -145,13 +146,13 @@ las fichas en la pantalla */
 
 function intercambiarPosicionesDOM(idPieza1, idPieza2) {
   // Intercambio posiciones en el DOM
-  var elementoPieza1 = document.getElementById(idPieza1);
-  var elementoPieza2 = document.getElementById(idPieza2);
+  let elementoPieza1 = document.getElementById(idPieza1);
+  let elementoPieza2 = document.getElementById(idPieza2);
 
-  var padre = elementoPieza1.parentNode;
+  let padre = elementoPieza1.parentNode;
 
-  var clonElemento1 = elementoPieza1.cloneNode(true);
-  var clonElemento2 = elementoPieza2.cloneNode(true);
+  let clonElemento1 = elementoPieza1.cloneNode(true);
+  let clonElemento2 = elementoPieza2.cloneNode(true);
 
   padre.replaceChild(clonElemento1, elementoPieza2);
   padre.replaceChild(clonElemento2, elementoPieza1);
@@ -181,8 +182,8 @@ function actualizarUltimoMovimiento(direccion) {
 con idLista. Se crea un elemento li dinámicamente con el texto 
 pasado con el parámetro "instrucción". */
 function mostrarInstruccionEnLista(instruccion, idLista) {
-  var ul = document.getElementById(idLista);
-  var li = document.createElement("li");
+  let ul = document.getElementById(idLista);
+  let li = document.createElement("li");
   li.textContent = instruccion;
   ul.appendChild(li);
 }
@@ -196,11 +197,11 @@ function mezclarPiezas(veces) {
     return;
   }
   
-  var direcciones = [codigosDireccion.ABAJO, codigosDireccion.ARRIBA,
+  let direcciones = [codigosDireccion.ABAJO, codigosDireccion.ARRIBA,
       codigosDireccion.DERECHA, codigosDireccion.IZQUIERDA
     ];
 
-  var direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
+  let direccion = direcciones[Math.floor(Math.random() * direcciones.length)];
   moverEnDireccion(direccion);
 
   setTimeout(function() {
@@ -222,7 +223,7 @@ function capturarTeclas() {
 
       moverEnDireccion(evento.which);
 
-        var gano = chequearSiGano();
+        let gano = chequearSiGano();
         if (gano) {
           setTimeout(function() {
               mostrarCartelGanador();
